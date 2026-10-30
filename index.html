@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aram Photography — Visual Stories Through the Lens</title>
+  <meta name="description" content="Portfolio of Aram Photography — photographer and visual storyteller.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Fonts: Cormorant Garamond (headlines) · Inter (body) · IBM Plex Mono (camera labels). Fallbacks are set in CSS. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    /* Enables the animated experience, with a safety net: if the main script never runs,
+       the intro is removed after 4 seconds so the visitor is never trapped. */
+    document.documentElement.className = 'js';
+    /* remember the visitor's language and theme (applied before first paint) */
+    try {
+      var th = localStorage.getItem('aram-theme'); if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th);
+      if (localStorage.getItem('aram-lang') === 'ar') { document.documentElement.lang = 'ar'; document.documentElement.dir = 'rtl'; }
+    } catch (e) {}
+    setTimeout(function () { if (!window.__aramReady) document.documentElement.classList.add('js-failed'); }, 4000);
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="skip.content">Skip to content</a>
+
+  <!-- ===================================================================
+       0 · CAMERA INTRO
+       =================================================================== -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Welcome to the portfolio of Aram Photography">
+    <div class="intro__light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="intro__vignette" aria-hidden="true"></div>
+
+    <!-- viewfinder furniture (kept minimal) -->
+    <div class="intro__hud" aria-hidden="true">
+      <i class="vf-c vf-c--tl"></i><i class="vf-c vf-c--tr"></i><i class="vf-c vf-c--bl"></i><i class="vf-c vf-c--br"></i>
+      <span class="hud hud--tl"><b class="rec-dot"></b> REC</span>
+      <span class="hud hud--tr">AF-S · [ ◦ ]</span>
+      <span class="hud hud--bl">ISO 100 · 1/125 · F2.8</span>
+      <span class="hud hud--br" id="introTc">00:00:00:00</span>
+    </div>
+
+    <div class="intro__center">
+      <div class="intro__stage">
+        <i class="af af--tl" aria-hidden="true"></i><i class="af af--tr" aria-hidden="true"></i>
+        <i class="af af--bl" aria-hidden="true"></i><i class="af af--br" aria-hidden="true"></i>
+        <h2 class="intro__name" data-name-inline>ARAM PHOTOGRAPHY</h2>
+        <p class="intro__sub" data-bind="introSubtitle">Photographer · Visual Storyteller</p>
+      </div>
+
+      <button class="aperture" id="enterBtn" type="button" aria-label="Enter the experience">
+        <span class="aperture__ring" aria-hidden="true"></span>
+        <svg class="aperture__svg" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false">
+          <circle class="aperture__rim" r="47"/>
+          <g class="blades">
+            <path class="blade" style="--a:0deg"   d="M0-38 31-19 11 0z"/>
+            <path class="blade" style="--a:60deg"  d="M0-38 31-19 11 0z"/>
+            <path class="blade" style="--a:120deg" d="M0-38 31-19 11 0z"/>
+            <path class="blade" style="--a:180deg" d="M0-38 31-19 11 0z"/>
+            <path class="blade" style="--a:240deg" d="M0-38 31-19 11 0z"/>
+            <path class="blade" style="--a:300deg" d="M0-38 31-19 11 0z"/>
+          </g>
+          <circle class="aperture__glint" r="3.2"/>
+        </svg>
+        <span class="aperture__label" data-i18n="intro.enter">Enter the frame</span>
+      </button>
+    </div>
+
+    <div class="intro__tools">
+      <button class="tool" type="button" data-lang-toggle>عربي</button>
+        <button class="tool tool--icon" type="button" data-theme-toggle>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        </button>
+    </div>
+
+    <button class="intro__skip" id="skipIntro" type="button"><span data-i18n="intro.skip">Skip intro</span> <span class="arrow" aria-hidden="true">→</span></button>
+  </div>
+
+  <!-- ===================================================================
+       SITE
+       =================================================================== -->
+  <div id="site">
+
+    <header class="header" id="header">
+      <a class="brand" href="#hero" aria-label="Aram Photography — back to top">
+        <svg viewBox="-50 -50 100 100" aria-hidden="true" focusable="false"><circle r="46" fill="none" stroke="currentColor" stroke-width="4"/><path d="M0-34 28-17 10 0z M0-34 28-17 10 0z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M0-34 28-17 10 0z" transform="rotate(120)" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M0-34 28-17 10 0z" transform="rotate(240)" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></svg>
+        <span data-name-inline>ARAM PHOTOGRAPHY</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#frames" data-nav><span class="nav__n">01</span><span data-i18n="nav.frames">Frames</span></a></li>
+          <!-- Motion link (turn on together with the videos section):
+          <li><a href="#motion" data-nav><span class="nav__n">02</span>Motion</a></li>
+          -->
+          <li><a href="#card" data-nav><span class="nav__n">02</span><span data-i18n="nav.card">Card</span></a></li>
+          <li><a href="#contact" data-nav><span class="nav__n">03</span><span data-i18n="nav.contact">Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="header__tools">
+        <button class="tool" type="button" data-lang-toggle>عربي</button>
+        <button class="tool tool--icon" type="button" data-theme-toggle>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        </button>
+        <span class="timecode" aria-hidden="true"><b class="rec-dot"></b><span id="timecode">00:00:00</span></span>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+
+      <!-- ===============================================================
+           1 · HERO
+           =============================================================== -->
+      <section class="hero" id="hero" aria-labelledby="heroName">
+        <div class="hero__media" id="heroMedia">
+          <div class="hero__fallback" aria-hidden="true"><i class="hero__ring"></i></div>
+          <!-- ADD YOUR HERO IMAGE OR VIDEO in js/config.js → hero.image / hero.video (it is inserted here) -->
+        </div>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="grain grain--soft" aria-hidden="true"></div>
+
+        <div class="vf" aria-hidden="true">
+          <i class="vf-c vf-c--tl"></i><i class="vf-c vf-c--tr"></i><i class="vf-c vf-c--bl"></i><i class="vf-c vf-c--br"></i>
+          <i class="vf__cross"></i>
+          <span class="hud hud--tl">FRAME 000</span>
+          <span class="hud hud--tr">AF-C · TRACKING</span>
+        </div>
+
+        <div class="hero__content" id="heroContent">
+          <p class="eyebrow hero__eyebrow" data-bind="heroEyebrow">Visual stories through the lens</p>
+          <h1 class="hero__name" id="heroName" data-name-lines>ARAM PHOTOGRAPHY</h1>
+          <div class="hero__row">
+            <p class="hero__tag" data-bind="hero.tagline">Every frame holds a story.</p>
+            <a class="btn" href="#frames" data-magnetic data-cursor="link"><span data-bind="hero.ctaLabel">View the frames</span><i aria-hidden="true">→</i></a>
+          </div>
+        </div>
+
+        <a class="scroll" href="#frames" aria-label="Scroll down to the photography reel"><span data-i18n="hero.scroll">Scroll</span><i aria-hidden="true"></i></a>
+        <div class="letterbox letterbox--top" aria-hidden="true"></div>
+        <div class="letterbox letterbox--bottom" aria-hidden="true"></div>
+      </section>
+
+      <!-- ===============================================================
+           2 · THE MOVING FRAME (photography reel)
+           =============================================================== -->
+      <section class="frames" id="frames" aria-labelledby="framesTitle">
+        <div class="wrap sec-head">
+          <p class="eyebrow reveal"><span class="eyebrow__n">01</span> <span data-i18n="frames.eyebrow">The moving frame</span></p>
+          <h2 class="display reveal" id="framesTitle" data-split data-bind="gallery.heading">Selected Frames</h2>
+          <p class="lede reveal" data-bind="gallery.intro">A slow reel of moments — hover to linger on a frame, click to step inside it.</p>
+        </div>
+
+        <div class="reel" id="reel" role="region" aria-label="Photography reel. Each frame opens a larger view.">
+          <div class="reel__track" id="reelTrack"></div>
+          <noscript><p class="wrap noscript-note">Enable JavaScript to view the photography reel.</p></noscript>
+        </div>
+
+        <div class="wrap reel__bar">
+          <button class="chip" id="reelToggle" type="button" aria-pressed="false" data-cursor="link">
+            <span class="chip__ico" aria-hidden="true"></span><span id="reelToggleLabel">Pause reel</span>
+          </button>
+          <p class="mono-note"><span data-i18n="frames.hint">Click a frame to open it · ← → to browse</span></p>
+        </div>
+      </section>
+
+      <!-- <section class="motion" id="motion" aria-labelledby="motionTitle">
+        <div class="wrap">
+          <div class="sec-head sec-head--split">
+            <div>
+              <p class="eyebrow reveal"><span class="eyebrow__n">02</span> Cinema collection</p>
+              <h2 class="display reveal" id="motionTitle" data-split data-bind="videos.heading">Motion Stories</h2>
+            </div>
+            <p class="lede reveal" data-bind="videos.subtitle">Stories that move beyond a single frame.</p>
+          </div>
+          <div class="vgrid" id="videoGrid"></div>
+        </div>
+      </section> -->
+     
+
+      <!-- ===============================================================
+           4b · BUSINESS CARD (front + back, flips in 3D)
+           =============================================================== -->
+      <section class="card" id="card" aria-labelledby="cardTitle">
+        <div class="wrap card__inner">
+          <div class="card__text">
+            <p class="eyebrow reveal"><span class="eyebrow__n">02</span> <span data-i18n="card.eyebrow">Take it with you</span></p>
+            <h2 class="display reveal" id="cardTitle" data-split data-bind="card.heading">The Card</h2>
+            <p class="lede reveal" data-bind="card.text">Keep it close — everything you need to reach me, on one card.</p>
+            <div class="card__ctrl reveal" role="group" aria-label="Choose card side">
+              <button class="chip" type="button" id="cardFront" aria-pressed="true" data-cursor="link" data-i18n="card.front">Front</button>
+              <button class="chip" type="button" id="cardBack" aria-pressed="false" data-cursor="link" data-i18n="card.back">Back</button>
+            </div>
+            <p class="mono-note card__hint reveal" data-i18n="card.hint">Click or tap the card to flip it</p>
+          </div>
+          <div class="card__stage reveal">
+            <button class="bcard" id="bcard" type="button" aria-label="Business card, showing the front. Activate to flip." data-cursor="focus">
+              <span class="bcard__in">
+                <span class="bcard__face bcard__face--front" id="cardFaceFront"><!-- ADD YOUR CARD FRONT IMAGE in js/config.js → card.front --></span>
+                <span class="bcard__face bcard__face--back" id="cardFaceBack"><!-- ADD YOUR CARD BACK IMAGE in js/config.js → card.back --></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===============================================================
+           5 · CONTACT
+           =============================================================== -->
+      <section class="contact" id="contact" aria-labelledby="contactTitle">
+        <svg class="contact__aperture" viewBox="-50 -50 100 100" aria-hidden="true" focusable="false">
+          <circle r="48" fill="none" stroke="currentColor" stroke-width=".25"/>
+          <g fill="none" stroke="currentColor" stroke-width=".25" stroke-linejoin="round">
+            <path d="M0-40 33-20 12 0z"/><path d="M0-40 33-20 12 0z" transform="rotate(60)"/><path d="M0-40 33-20 12 0z" transform="rotate(120)"/>
+            <path d="M0-40 33-20 12 0z" transform="rotate(180)"/><path d="M0-40 33-20 12 0z" transform="rotate(240)"/><path d="M0-40 33-20 12 0z" transform="rotate(300)"/>
+          </g>
+        </svg>
+        <div class="wrap contact__inner">
+          <p class="eyebrow reveal"><span class="eyebrow__n">03</span> <span data-i18n="contact.eyebrow">Final scene</span></p>
+          <h2 class="display display--xl reveal" id="contactTitle" data-split data-bind="contact.heading">Let's create something timeless.</h2>
+          <p class="lede lede--center reveal" data-bind="contact.text">Have a story to tell? Let's capture it.</p>
+
+          <ul class="socials reveal" id="socials" aria-label="Social media and messaging"></ul>
+          <ul class="details reveal" id="details" aria-label="Contact details"></ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         6 · FOOTER — CINEMATIC ENDING
+         =================================================================== -->
+    <footer class="footer" id="footer">
+      <div class="footer__ap" aria-hidden="true">
+        <svg viewBox="-50 -50 100 100" focusable="false">
+          <circle r="47" fill="none" stroke="currentColor" stroke-width=".6"/>
+          <g class="footer__blades" fill="none" stroke="currentColor" stroke-width=".6" stroke-linejoin="round">
+            <path d="M0-38 31-19 11 0z" style="--a:0deg"/><path d="M0-38 31-19 11 0z" style="--a:60deg"/><path d="M0-38 31-19 11 0z" style="--a:120deg"/>
+            <path d="M0-38 31-19 11 0z" style="--a:180deg"/><path d="M0-38 31-19 11 0z" style="--a:240deg"/><path d="M0-38 31-19 11 0z" style="--a:300deg"/>
+          </g>
+        </svg>
+      </div>
+      <div class="wrap footer__inner">
+        <p class="footer__name" data-name-inline>ARAM PHOTOGRAPHY</p>
+        <p class="footer__phrase" data-bind="footer.phrase">Some moments deserve to live forever.</p>
+        <ul class="socials socials--mini" id="footerSocials" aria-label="Social media links"></ul>
+        <div class="footer__bar">
+          <p class="mono-note" id="copyright">© 2026 Aram Photography</p>
+          <p class="mono-note footer__end"><b class="rec-dot rec-dot--off"></b> <span data-i18n="footer.end">End of reel</span></p>
+          <button class="chip" id="toTop" type="button" data-cursor="link"><span data-i18n="footer.top">Back to top</span> <span aria-hidden="true">↑</span></button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================================================================
+       LIGHTBOX (photographs)
+       =================================================================== -->
+  <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden tabindex="-1">
+    <div class="lb__top">
+      <p class="mono-note" id="lbCount" aria-live="polite">01 / 08</p>
+      <button class="icon-btn" type="button" data-close data-autofocus aria-label="Close viewer" data-cursor="link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    </div>
+    <button class="icon-btn lb__nav lb__nav--prev" id="lbPrev" type="button" aria-label="Previous photograph" data-cursor="link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8"/></svg></button>
+    <figure class="lb__figure" id="lbFigure">
+      <div class="lb__stage" id="lbStage"></div>
+      <figcaption class="lb__cap">
+        <h3 id="lbTitle"></h3>
+        <p class="lb__meta" id="lbMeta"></p>
+        <p class="lb__text" id="lbText"></p>
+      </figcaption>
+    </figure>
+    <button class="icon-btn lb__nav lb__nav--next" id="lbNext" type="button" aria-label="Next photograph" data-cursor="link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg></button>
+  </div>
+
+  <!-- VIDEO MODAL — TURNED OFF (turn on together with the Motion Stories section above) -->
+  <!--
+  
+  <div class="lb vm" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player" hidden tabindex="-1">
+    <div class="lb__top">
+      <p class="mono-note" id="vmCat">Motion story</p>
+      <button class="icon-btn" type="button" data-close data-autofocus aria-label="Close video" data-cursor="link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    </div>
+    <figure class="lb__figure">
+      <div class="vm__stage" id="vmStage">
+        
+        <video id="vmVideo" controls playsinline preload="none" data-cursor="native">Your browser cannot play this video.</video>
+        <p class="vm__msg" id="vmMsg" role="status" hidden>This video could not be loaded.</p>
+      </div>
+      <figcaption class="lb__cap"><h3 id="vmTitle"></h3><p class="lb__text" id="vmText"></p></figcaption>
+    </figure>
+  </div>
+  -->
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Optional sound switch — only appears if sound is configured in js/config.js -->
+  <button class="sound" id="soundToggle" type="button" aria-pressed="false" hidden>
+    <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="soundLabel">Sound off</span>
+  </button>
+
+  <noscript>
+    <style>.intro{display:none!important}.reveal{opacity:1!important;transform:none!important}</style>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
